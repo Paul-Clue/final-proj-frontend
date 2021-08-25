@@ -26,7 +26,7 @@ function Login(props) {
       // [event.target.name]: event.target.value,
       nam.current.value,
     );
-    console.log(nam.current.value);//eslint-disable-line
+    // console.log(nam.current.value);//eslint-disable-line
 
     setPassword(
       // [event.target.password]: event.target.value,
@@ -36,6 +36,7 @@ function Login(props) {
 
   // const { setCurrentUser } = props;
   const { routerProps } = props;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 

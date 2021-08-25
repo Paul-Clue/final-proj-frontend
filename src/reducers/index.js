@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import UserReducer from './user';
-// import FilterReducer from './filter';
+import DateReducer from './date';
 // import DetailsReducer from './detail';
 
 const rootReducer = combineReducers({
   user: UserReducer,
-  // filter: FilterReducer,
+  appointments: DateReducer,
   // detail: DetailsReducer,
 });
 

@@ -23,6 +23,8 @@ function App() {
   // }
   // const [CurrentUser, setCurrentUser] = useState({ name: null, password: null });
   const CurrentUser = useSelector((state) => state.user);
+  console.log(`This is current user: ${CurrentUser}`)//eslint-disable-line
+  console.log(CurrentUser)//eslint-disable-line
   // const use = useSelector((state) => state.user);
   // const dispatch = useDispatch();
 
@@ -45,9 +47,9 @@ function App() {
           <Route
             exact
             path="/Profile"
-            render={() => (
+            render={(props) => (
               CurrentUser
-                ? (<Profile currentuser={CurrentUser} />)
+                ? (<Profile currentuser={CurrentUser} routerProps={props} />)
                 : (<Login />)
             )}
           />

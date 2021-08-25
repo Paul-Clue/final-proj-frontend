@@ -11,15 +11,16 @@ import App from './components/App';
 const user = {
   name: '',
   password: '',
+  user_id: '',
 };
 
 // const frames = {
 //   make: '',
 // };
 
-// const appointments = {
-//   date: '',
-// };
+const appointments = {
+  date: '',
+};
 
 // const store = createStore(
 //   rootReducer,
@@ -29,7 +30,7 @@ const user = {
 
 const store = createStore(
   rootReducer,
-  { user },
+  { user, appointments },
   devToolsEnhancer(),
 );
 
