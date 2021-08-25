@@ -2,7 +2,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import getData from '../util/apiFetch';
+import { postData } from '../util/apiFetch';
 import { setUser } from '../actions';
 
 function Login(props) {
@@ -50,7 +50,7 @@ function Login(props) {
     const url = 'http://localhost:3001/login';
 
     // useEffect(() => {
-    getData(url, user)
+    postData(url, user)
       .then((response) => response.json())
       .then((data) => {
         // setCurrentUser(data);

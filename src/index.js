@@ -14,23 +14,15 @@ const user = {
   user_id: '',
 };
 
-// const frames = {
-//   make: '',
-// };
+const frame = [];
 
 const appointments = {
   date: '',
 };
 
-// const store = createStore(
-//   rootReducer,
-//   { user: user, filter: filters, detail: details },
-//   devToolsEnhancer(),
-// );
-
 const store = createStore(
   rootReducer,
-  { user, appointments },
+  { user, appointments, frame },
   devToolsEnhancer(),
 );
 

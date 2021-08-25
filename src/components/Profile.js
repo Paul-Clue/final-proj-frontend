@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import getData from '../util/apiFetch';
+import { postData } from '../util/apiFetch';
 import { setDate } from '../actions';
 
 function Profile(props) {
@@ -36,7 +36,7 @@ function Profile(props) {
     const url = 'http://localhost:3001/appoint';
 
     // useEffect(() => {
-    getData(url, user)
+    postData(url, user)
       .then((response) => response.json())
       .then((data) => {
         // setCurrentUser(data);

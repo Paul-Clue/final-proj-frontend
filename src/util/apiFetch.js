@@ -1,4 +1,4 @@
-const getData = async (url, use) => {
+export const postData = async (url, use) => {
   const data = await fetch(url, {
     method: 'Post',
     headers: {
@@ -10,4 +10,13 @@ const getData = async (url, use) => {
   return data;
 };
 
-export default getData;
+export const getData = async (url) => {
+  const data = await fetch(url, {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',//eslint-disable-line
+    },
+  });
+  return data;
+};

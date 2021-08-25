@@ -8,7 +8,7 @@ export const setDate = (dat) => ({
   payload: dat,
 });
 
-export const addCoin = (coin) => ({
-  type: 'CHANGE_COIN',
-  payload: coin,
+export const addFrame = (frm) => ({
+  type: 'GET_FRAMES',
+  payload: frm,
 });

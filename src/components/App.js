@@ -41,7 +41,7 @@ function App() {
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" render={(props) => <Home routerProps={props} />} />
 
           <Route exact path="/login" render={(props) => <Login routerProps={props} />} />
           <Route
