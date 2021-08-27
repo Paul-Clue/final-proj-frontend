@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { postData } from '../util/apiFetch';
 import { setDate } from '../actions';
+import Nav from './Nav';
 
 function Profile(props) {
   const { currentuser } = props;
@@ -68,8 +69,9 @@ function Profile(props) {
 
   return (
     <>
+      <Nav />
       <h1>{currentuser.name}</h1>
-      <h1>{currentuser.password}</h1>
+      {/* <h1>{currentuser.password}</h1> */}
       <h1>
         This is the Date:
         {date}

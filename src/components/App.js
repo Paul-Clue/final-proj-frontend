@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import {
   BrowserRouter,
-  withRouter,
+  // withRouter,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -12,6 +12,7 @@ import '../App.css';
 import Login from '../conainers/Login';
 import Profile from './Profile';
 import Home from './Home';
+// import Nav from './Nav';
 // import { setUser } from '../actions';
 
 function App() {
@@ -59,5 +60,5 @@ function App() {
   );
 }
 
-export default withRouter(App);
-// export default App;
+// export default withRouter(App);
+export default App;

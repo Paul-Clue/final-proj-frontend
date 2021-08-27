@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { postData } from '../util/apiFetch';
 import { setUser } from '../actions';
-import Nav from '../components/Nav';
 
 function Login(props) {
   // constructor(props) {
@@ -18,16 +17,8 @@ function Login(props) {
 
   const nam = useRef();
   const pass = useRef();
-
-  const nam2 = useRef();
-  const pass2 = useRef();
-
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-
-  const [name2, setName2] = useState('');
-  const [password2, setPassword2] = useState('');
-
   const dispatch = useDispatch();
 
   const handleOnChange = () => {
@@ -43,19 +34,6 @@ function Login(props) {
     );
   };
 
-  const handleOnChange2 = () => {
-    setName2(
-      // [event.target.name]: event.target.value,
-      nam2.current.value,
-    );
-    // console.log(nam.current.value);//eslint-disable-line
-
-    setPassword2(
-      // [event.target.password]: event.target.value,
-      pass2.current.value,
-    );
-  };
-
   // const { setCurrentUser } = props;
   const { routerProps } = props;
 
@@ -65,36 +43,11 @@ function Login(props) {
     const user = {
       name,
       password,
+      // name: this.state.name,//eslint-disable-line
+      // password: this.state.password,//eslint-disable-line
     };
 
-    const url = 'http://localhost:3001/login';
-
-    // useEffect(() => {
-    postData(url, user)
-      .then((response) => response.json())
-      .then((data) => {//eslint-disable-line
-        // setCurrentUser(data);
-        dispatch(setUser(data));
-        if (data.name === 'no') {
-          routerProps.history.push('/login');
-        } else {
-          routerProps.history.push('/profile');
-          return data;
-        }
-      })
-      .then((data) => console.log(data));
-    // }, []);
-  };
-
-  const handleSubmit2 = (event) => {
-    event.preventDefault();
-
-    const user = {
-      name: name2,
-      password: password2,
-    };
-
-    const url = 'http://localhost:3001/login2';
+    const url = 'http://localhost:3001/login1';
 
     // useEffect(() => {
     postData(url, user)
@@ -102,16 +55,34 @@ function Login(props) {
       .then((data) => {
         // setCurrentUser(data);
         dispatch(setUser(data));
-        routerProps.history.push('/profile');
+        routerProps.history.push('/login1');
         return data;
       })
       .then((data) => console.log(data));
     // }, []);
+
+    // fetch('http://localhost:3001/login', {
+    //   method: 'Post',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json',//eslint-disable-line
+    //   },
+    //   body: JSON.stringify(user),
+    // })
+    // .then((response) => response.json())
+    // .then((data) => {
+    //   setCurrentUser(data);
+    //   routerProps.history.push('/profile');
+    //   return data;
+    // })
+    // .then((data) => console.log(data));
   };
+
+  // const { password } = this.state;
+  // const { name } = this.state;
 
   return (
     <>
-      <Nav />
       <form onSubmit={handleSubmit}>
         <label htmlFor="nameInput">
           Name:
@@ -123,22 +94,8 @@ function Login(props) {
         </label>
         <input type="submit" value="Login" />
       </form>
-
-      <form onSubmit={handleSubmit2}>
-        <label htmlFor="nameInput2">
-          Name:
-          <input type="text" name="name2" ref={nam2} value={name2} id="nameInput2" onChange={handleOnChange2} />
-        </label>
-        <label htmlFor="passwordInput2">
-          Password:
-          <input type="password" name="password2" ref={pass2} value={password2} id="passwordInput2" onChange={handleOnChange2} />
-        </label>
-        <input type="submit" value="Create Account" />
-      </form>
       <h1>{name}</h1>
       <h1>{password}</h1>
-      <h1>{name2}</h1>
-      <h1>{password2}</h1>
     </>
   );
 }

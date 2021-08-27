@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getData } from '../util/apiFetch';
 import { addFrame } from '../actions';
+import Nav from './Nav';
 
 function Home(props) {
   const { routerProps } = props;
@@ -30,10 +31,10 @@ function Home(props) {
 
   return (
     <>
+      <Nav />
       <ul>
         {frame2.map((frm) => (
           <li key={frm.id}>
-            show this:
             {frm.make}
             <img src={frm.pic} alt="frames" />
           </li>
