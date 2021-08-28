@@ -2,13 +2,18 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getData } from '../util/apiFetch';
-import { addFrame } from '../actions';
+import { addFrame, changeFrame } from '../actions';
 import Nav from './Nav';
 
 function Home(props) {
   const { routerProps } = props;
   const dispatch = useDispatch();
+
+  function sendInfo(load) {
+    dispatch(changeFrame(load));
+  }
 
   const url = 'http://localhost:3001/frm';
   useEffect(() => {
@@ -19,7 +24,7 @@ function Home(props) {
         console.log(data)//eslint-disable-line
         dispatch(addFrame(data));
 
-        routerProps.history.push('/');
+        routerProps.history.push('/Home');
         return data;
       })
       .then((data) => console.log(data));//eslint-disable-line
@@ -34,10 +39,12 @@ function Home(props) {
       <Nav />
       <ul>
         {frame2.map((frm) => (
-          <li key={frm.id}>
-            {frm.make}
-            <img src={frm.pic} alt="frames" />
-          </li>
+          <Link frame={frm.make} key={frm.id} className="Link home1" onClick={() => sendInfo(frm)} to="/profile">
+            <li key={frm.id}>
+              {frm.make}
+              <img src={frm.pic} alt="frames" />
+            </li>
+          </Link>
         ))}
       </ul>
     </>

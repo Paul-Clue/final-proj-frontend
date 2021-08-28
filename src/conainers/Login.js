@@ -78,7 +78,7 @@ function Login(props) {
         if (data.name === 'no') {
           routerProps.history.push('/login');
         } else {
-          routerProps.history.push('/profile');
+          routerProps.history.push('/Home');
           return data;
         }
       })
@@ -102,7 +102,7 @@ function Login(props) {
       .then((data) => {
         // setCurrentUser(data);
         dispatch(setUser(data));
-        routerProps.history.push('/profile');
+        routerProps.history.push('/Home');
         return data;
       })
       .then((data) => console.log(data));

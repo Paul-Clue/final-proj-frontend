@@ -20,9 +20,16 @@ const appointments = {
   date: '',
 };
 
+const prof = {
+  make: '',
+  pic: '',
+};
+
 const store = createStore(
   rootReducer,
-  { user, appointments, frame },
+  {
+    user, appointments, frame, prof,
+  },
   devToolsEnhancer(),
 );
 

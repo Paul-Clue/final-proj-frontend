@@ -12,3 +12,8 @@ export const addFrame = (frm) => ({
   type: 'GET_FRAMES',
   payload: frm,
 });
+
+export const changeFrame = (frm) => ({
+  type: 'CHANGE_FRAMES',
+  payload: frm,
+});

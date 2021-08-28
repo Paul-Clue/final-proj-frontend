@@ -21,7 +21,7 @@ function Nav() {
             </h1>
           </span>
           <div>
-            <Link className="Link home" to="/">
+            <Link className="Link home" to="/Home">
               Home
             </Link>
           </div>

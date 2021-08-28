@@ -9,9 +9,16 @@ function Profile(props) {
   const { currentuser } = props;
   const dat = useRef();
 
+  console.log(props)//eslint-disable-line
+
   const date2 = useSelector((state) => state.appointments);
   console.log(date2)//eslint-disable-line
   const [date, setDates] = useState(date2.date);
+
+  const frm = useSelector((state) => state.prof);
+  const [frm2] = useState(frm);
+  console.log(frm2)//eslint-disable-line
+  console.log(frm)//eslint-disable-line
   const dispatch = useDispatch();
   const { routerProps } = props;
 
@@ -98,11 +105,14 @@ function Profile(props) {
       </form>
       <p>This is the date</p>
       <h1>{date}</h1>
+      <h1>{frm2.make}</h1>
+      <img src={frm.pic} alt="frm" />
     </>
   );
 }
 
 Profile.propTypes = { currentuser: PropTypes.instanceOf(Object).isRequired };
 Profile.propTypes = { routerProps: PropTypes.instanceOf(Object).isRequired };
+// Profile.propTypes = { frame: PropTypes.string.isRequired };
 
 export default Profile;
