@@ -12,6 +12,7 @@ import '../App.css';
 import Login from '../conainers/Login';
 import Profile from './Profile';
 import Home from './Home';
+import AllApps from './AllApps';
 // import Nav from './Nav';
 // import { setUser } from '../actions';
 
@@ -41,20 +42,28 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Switch>
-          <Route exact path="/Home" render={(props) => <Home routerProps={props} />} />
+        {
+        CurrentUser.name
+          ? (
+            <Switch>
+              <Route exact path="/Home" render={(props) => <Home currentuser={CurrentUser} routerProps={props} />} />
+              <Route exact path="/Appoint" render={(props) => <AllApps routerProps={props} />} />
 
-          <Route exact path="/" render={(props) => <Login routerProps={props} />} />
-          <Route
-            exact
-            path="/Profile"
-            render={(props) => (
-              CurrentUser
-                ? (<Profile currentuser={CurrentUser} routerProps={props} />)
-                : (<Login />)
-            )}
-          />
-        </Switch>
+              <Route exact path="/" render={(props) => <Login routerProps={props} />} />
+              <Route
+                exact
+                path="/Profile"
+                render={(props) => (<Profile currentuser={CurrentUser} routerProps={props} />)}
+                // render={(props) => (
+                //   CurrentUser
+                //     ? (<Profile currentuser={CurrentUser} routerProps={props} />)
+                //     : (<Login />)
+                // )}
+              />
+            </Switch>
+          )
+          : <Switch><Route path="/" render={(props) => <Login routerProps={props} />} /></Switch>
+      }
       </BrowserRouter>
     </>
   );

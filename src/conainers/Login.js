@@ -1,9 +1,9 @@
 // import React, { useState, useRef, useEffect } from 'react';
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { postData } from '../util/apiFetch';
-import { setUser } from '../actions';
+import { setUser, err } from '../actions';
 import Nav from '../components/Nav';
 
 function Login(props) {
@@ -27,6 +27,8 @@ function Login(props) {
 
   const [name2, setName2] = useState('');
   const [password2, setPassword2] = useState('');
+
+  const message = useSelector((state) => state.error);
 
   const dispatch = useDispatch();
 
@@ -76,8 +78,10 @@ function Login(props) {
         // setCurrentUser(data);
         dispatch(setUser(data));
         if (data.name === 'no') {
-          routerProps.history.push('/login');
+          dispatch(err('Please try to login again or create an account.'));
+          routerProps.history.push('/');
         } else {
+          dispatch(err(null));
           routerProps.history.push('/Home');
           return data;
         }
@@ -112,6 +116,8 @@ function Login(props) {
   return (
     <>
       <Nav />
+      {console.log(`This is message: ${message}`)}
+      <p>{message}</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="nameInput">
           Name:

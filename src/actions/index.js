@@ -17,3 +17,8 @@ export const changeFrame = (frm) => ({
   type: 'CHANGE_FRAMES',
   payload: frm,
 });
+
+export const err = (frm) => ({
+  type: 'ERROR',
+  payload: frm,
+});

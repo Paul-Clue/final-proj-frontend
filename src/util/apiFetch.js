@@ -20,3 +20,15 @@ export const getData = async (url) => {
   });
   return data;
 };
+
+export const getData2 = async (url, date) => {
+  const data = await fetch(url, {
+    method: 'Post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',//eslint-disable-line
+    },
+    body: JSON.stringify(date),
+  });
+  return data;
+};

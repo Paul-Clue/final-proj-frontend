@@ -18,6 +18,8 @@ const frame = [];
 
 const appointments = {
   date: '',
+  user_id: '',
+  frame_id: '',
 };
 
 const prof = {
@@ -25,10 +27,12 @@ const prof = {
   pic: '',
 };
 
+const error = '';
+
 const store = createStore(
   rootReducer,
   {
-    user, appointments, frame, prof,
+    user, appointments, frame, prof, error,
   },
   devToolsEnhancer(),
 );

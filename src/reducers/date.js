@@ -1,9 +1,9 @@
-const DateReducer = (state = { date: '' }, action) => {
+const DateReducer = (state = {}, action) => {
   let changedState = state;
 
   switch (action.type) {
     case 'SET_DATE':
-      changedState = { date: action.payload.date };
+      changedState = { ...action.payload };
       return changedState;
     default:
       return changedState;

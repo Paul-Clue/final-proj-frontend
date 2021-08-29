@@ -26,10 +26,9 @@ function Nav() {
             </Link>
           </div>
           <div>
-            <Link className="Link login1" to="/login">
-              Login
+            <Link className="Link login1" to="/Appoint">
+              View your appointment.
             </Link>
-            to view your appointment.
           </div>
         </div>
       </nav>
