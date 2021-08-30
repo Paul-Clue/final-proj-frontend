@@ -64,6 +64,8 @@ function Profile(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    console.log(cit.current.value)//eslint-disable-line
+    console.log("--------------------------------------------------")//eslint-disable-line
     const user = {
       // name: currentuser.name,
       // password: currentuser.password,

@@ -12,6 +12,12 @@ import Nav from './Nav';
 import '../assets/stylesheets/Profile.css';
 
 function AllApps() {
+  const show = [];
+  const show2 = [];
+  const show3 = [];
+
+  let ind = 0;
+
   const currentuser = useSelector((state) => state.user);
   // const dat = useRef();
 
@@ -47,7 +53,6 @@ function AllApps() {
         return '';
       })
       .then((data) => {
-        // console.log(data)//eslint-disable-line
         console.log(data)//eslint-disable-line
           console.log("List of things:")//eslint-disable-line
         dispatch(setDate(data));
@@ -57,11 +62,28 @@ function AllApps() {
       })
       .then((data) => console.log(data) + console.log(date2));
   }, []);
-  // const show = [];
-  // for (const [key, value] of Object.entries(date2)) {//eslint-disable-line
+
+    console.log(show2)//eslint-disable-line
+        console.log("2222222222222222222222")//eslint-disable-line
+
+  // for (const [key, value] of date2.entries(obj)) {//eslint-disable-line
   //   // <h1 key={key}>{value}</h1>
   //   show.push([value, value.city, value.date]);
   // }
+
+  console.log(date2)//eslint-disable-line
+  console.log('====++++++++==============++++++++++++++')//eslint-disable-line
+
+  Object.entries(date2).forEach(([key, value]) => (
+    show3.push(key),//eslint-disable-line
+    show.push(value)
+  ));
+
+  for (let i = 0; i < show.length; i += 1) {
+    console.log(show[i])//eslint-disable-line
+    console.log(date2)//eslint-disable-line
+    // console.log(show[i].frame.make)//eslint-disable-line
+  }
 
   return (
     <>
@@ -70,9 +92,40 @@ function AllApps() {
 
       {/* <h1>{date2[0].id}</h1> */}
       {console.log('This is above')}
-      {/* {console.log(show)} */}
+      {console.log(show2)}
       {console.log(date2)}
-      {/* {console.log(Array.isArray(show))} */}
+      {console.log(show.frame)}
+      <ul>
+        {date2.frame
+          ? Object.entries(date2).forEach(([key, value]) => (
+          show3.push(key),//eslint-disable-line
+          show.push(value),//eslint-disable-line
+            show2.push([date2.date, '\xa0\xa0', 'In: ', date2.city, 'To try on:', '\xa0\xa0', date2.frame.make, '\xa0\xa0', 'frames'])
+          ))
+          : Object.entries(date2).forEach(([key, value]) => (
+            show3.push(key),//eslint-disable-line
+            show.push(value),//eslint-disable-line
+            show2.push([value.date, '\xa0\xa0', 'In: ', value.city, 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
+          ))}
+
+        {date2.frame
+          ? show2.map((app) => (
+            ind ++,//eslint-disable-line
+            console.log(date2),
+            console.log('888888888888888888888888888888'),
+              <li key={ind}>
+                {app}
+              </li>
+          ))
+          : show2.map((app) => (
+            ind ++,//eslint-disable-line
+              <li key={ind}>
+                {app}
+              </li>
+          ))}
+      </ul>
+      {/* <h1>{date2}</h1> */}
+      {console.log(Array.isArray(show))}
       {console.log('This is under')}
     </>
   );

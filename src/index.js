@@ -16,11 +16,7 @@ const user = {
 
 const frame = [];
 
-const appointments = {
-  date: '',
-  user_id: '',
-  frame_id: '',
-};
+const appointments = [];
 
 const prof = {
   make: '',

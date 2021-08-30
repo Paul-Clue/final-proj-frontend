@@ -3,7 +3,7 @@ const DateReducer = (state = {}, action) => {
 
   switch (action.type) {
     case 'SET_DATE':
-      changedState = { ...action.payload };
+      changedState = action.payload;
       return changedState;
     default:
       return changedState;
