@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 // import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 // import qs from 'qs';
 // import { createBrowserHistory } from 'history';
 // import { postData, getData2 } from '../util/apiFetch';
@@ -89,6 +90,10 @@ function AllApps() {
   return (
     <>
       {/* <Nav /> */}
+      <h1 className="Apps">Your Appointment Dates</h1>
+      <Link className="HOME" to="/Home">
+        HOME
+      </Link>
       <div style={{ backgroundImage: `url( ${tom})` }} className="appointments">
         <ul className="ul">
           {date2.frame
@@ -100,7 +105,7 @@ function AllApps() {
             : Object.entries(date2).forEach(([key, value]) => (
               show3.push(key),//eslint-disable-line
               show.push(value),//eslint-disable-line
-              show2.push([value.date, '\xa0\xa0', 'In: ', value.city, 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
+              show2.push([value.date, '\xa0\xa0', 'In: ', value.city, '\xa0\xa0', 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
             ))}
 
           {date2.frame

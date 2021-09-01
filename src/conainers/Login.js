@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { postData } from '../util/apiFetch';
 import { setUser, err } from '../actions';
-import Nav from '../components/Nav';
+import tom from '../assets/img/tomford.jpg';
+import '../assets/stylesheets/Login.css';
+// import Nav from '../components/Nav';
 
 function Login(props) {
   // constructor(props) {
@@ -119,36 +121,37 @@ function Login(props) {
 
   return (
     <>
-      <Nav />
-      {console.log(`This is message: ${message}`)}
-      <p>{message}</p>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="nameInput">
-          Name:
-          <input type="text" name="name" ref={nam} value={name} id="nameInput" onChange={handleOnChange} />
-        </label>
-        <label htmlFor="passwordInput">
-          Password:
-          <input type="password" name="password" ref={pass} value={password} id="passwordInput" onChange={handleOnChange} />
-        </label>
-        <input type="submit" value="Login" />
-      </form>
+      {/* <Nav /> */}
+      <div className="loginDiv" style={{ backgroundImage: `url( ${tom})` }}>
+        <p>{message}</p>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="nameInput">
+            Name:
+            <input type="text" name="name" ref={nam} value={name} id="nameInput" onChange={handleOnChange} />
+          </label>
+          <label htmlFor="passwordInput">
+            Password:
+            <input type="password" name="password" ref={pass} value={password} id="passwordInput" onChange={handleOnChange} />
+          </label>
+          <input type="submit" value="Login" />
+        </form>
 
-      <form onSubmit={handleSubmit2}>
-        <label htmlFor="nameInput2">
-          Name:
-          <input type="text" name="name2" ref={nam2} value={name2} id="nameInput2" onChange={handleOnChange2} />
-        </label>
-        <label htmlFor="passwordInput2">
-          Password:
-          <input type="password" name="password2" ref={pass2} value={password2} id="passwordInput2" onChange={handleOnChange2} />
-        </label>
-        <input type="submit" value="Create Account" />
-      </form>
-      <h1>{name}</h1>
-      <h1>{password}</h1>
-      <h1>{name2}</h1>
-      <h1>{password2}</h1>
+        <form onSubmit={handleSubmit2}>
+          <label htmlFor="nameInput2">
+            Name:
+            <input type="text" name="name2" ref={nam2} value={name2} id="nameInput2" onChange={handleOnChange2} />
+          </label>
+          <label htmlFor="passwordInput2">
+            Password:
+            <input type="password" name="password2" ref={pass2} value={password2} id="passwordInput2" onChange={handleOnChange2} />
+          </label>
+          <input type="submit" value="Create Account" />
+        </form>
+        <h1>{name}</h1>
+        <h1>{password}</h1>
+        <h1>{name2}</h1>
+        <h1>{password2}</h1>
+      </div>
     </>
   );
 }

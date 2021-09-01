@@ -41,7 +41,25 @@
   font-size: 1.5vw;;
   position: absolute;
   top: 25vh;
-  left: 25vw;
+  left: 21vw;
   color: red;
   opacity: 100%;
+}
+
+.HOME {
+  position: absolute;
+  font-family:Archivo Black, sans-serif;
+  top: 0vh;
+  left: 9vw;
+  color: darkgray;
+  font-size: 2vw;
+  text-decoration: none;
+}
+
+.Apps {
+  position: absolute;
+  font-family:Archivo Black, sans-serif;
+  top: 16vh;
+  left: 30vw;
+  font-weight: bolder;
 }
