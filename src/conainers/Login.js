@@ -69,7 +69,7 @@ function Login(props) {
       password,
     };
 
-    const url = 'http://localhost:3001/login';
+    const url = 'https://secure-mountain-84366.herokuapp.com/login';
 
     // useEffect(() => {
     postData(url, user)
@@ -98,7 +98,7 @@ function Login(props) {
       password: password2,
     };
 
-    const url = 'http://localhost:3001/login2';
+    const url = 'https://secure-mountain-84366.herokuapp.com/login2';
 
     // useEffect(() => {
     postData(url, user)
@@ -106,6 +106,10 @@ function Login(props) {
       .then((data) => {
         // setCurrentUser(data);
         dispatch(setUser(data));
+        if (data.message === 'no-no') {
+          dispatch(err('This account already exists. Please try creating another account or login.'));
+          routerProps.history.push('/');
+        }
         routerProps.history.push('/Home');
         return data;
       })

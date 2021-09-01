@@ -47,7 +47,7 @@ function Login(props) {
       // password: this.state.password,//eslint-disable-line
     };
 
-    const url = 'http://localhost:3001/login1';
+    const url = 'https://secure-mountain-84366.herokuapp.com/login1';
 
     // useEffect(() => {
     postData(url, user)

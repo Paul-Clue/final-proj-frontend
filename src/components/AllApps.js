@@ -8,8 +8,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getData2 } from '../util/apiFetch';
 // import { postData } from '../util/apiFetch';
 import { setDate } from '../actions';
-import Nav from './Nav';
-import '../assets/stylesheets/Profile.css';
+// import Nav from './Nav';
+import '../assets/stylesheets/AllApps.css';
+import tom from '../assets/img/tomford.jpg';
 
 function AllApps() {
   const show = [];
@@ -39,7 +40,7 @@ function AllApps() {
     frame_id: frm.id,
   };
 
-  const url = 'http://localhost:3001/appoints2';
+  const url = 'https://secure-mountain-84366.herokuapp.com/appoints2';
   useEffect(() => {
     getData2(url, param)
       .then((response) => {
@@ -87,46 +88,38 @@ function AllApps() {
 
   return (
     <>
-      <Nav />
-      {/* {show.filter((date) => <h1 key={date[0]}>{date[0]}</h1>)} */}
-
-      {/* <h1>{date2[0].id}</h1> */}
-      {console.log('This is above')}
-      {console.log(show2)}
-      {console.log(date2)}
-      {console.log(show.frame)}
-      <ul>
-        {date2.frame
-          ? Object.entries(date2).forEach(([key, value]) => (
-          show3.push(key),//eslint-disable-line
-          show.push(value),//eslint-disable-line
-            show2.push([date2.date, '\xa0\xa0', 'In: ', date2.city, 'To try on:', '\xa0\xa0', date2.frame.make, '\xa0\xa0', 'frames'])
-          ))
-          : Object.entries(date2).forEach(([key, value]) => (
+      {/* <Nav /> */}
+      <div style={{ backgroundImage: `url( ${tom})` }} className="appointments">
+        <ul className="ul">
+          {date2.frame
+            ? Object.entries(date2).forEach(([key, value]) => (
             show3.push(key),//eslint-disable-line
             show.push(value),//eslint-disable-line
-            show2.push([value.date, '\xa0\xa0', 'In: ', value.city, 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
-          ))}
+              show2.push([date2.date, '\xa0\xa0', 'In: ', date2.city, '\xa0\xa0', 'To try on:', '\xa0\xa0', date2.frame.make, '\xa0\xa0', 'frames'])
+            ))
+            : Object.entries(date2).forEach(([key, value]) => (
+              show3.push(key),//eslint-disable-line
+              show.push(value),//eslint-disable-line
+              show2.push([value.date, '\xa0\xa0', 'In: ', value.city, 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
+            ))}
 
-        {date2.frame
-          ? show2.map((app) => (
-            ind ++,//eslint-disable-line
-            console.log(date2),
-            console.log('888888888888888888888888888888'),
-              <li key={ind}>
-                {app}
-              </li>
-          ))
-          : show2.map((app) => (
-            ind ++,//eslint-disable-line
-              <li key={ind}>
-                {app}
-              </li>
-          ))}
-      </ul>
-      {/* <h1>{date2}</h1> */}
-      {console.log(Array.isArray(show))}
-      {console.log('This is under')}
+          {date2.frame
+            ? show2.map((app) => (
+              ind ++,//eslint-disable-line
+                <li className="appList" key={ind}>
+                  {app}
+                </li>
+            ))
+            : show2.map((app) => (
+              ind ++,//eslint-disable-line
+                <li className="appList" key={ind}>
+                  {app}
+                </li>
+            ))}
+        </ul>
+        {/* <img className="backImage" src={tom} alt="images" /> */}
+      </div>
+      <div className="overlayDiv">{null}</div>
     </>
   );
 }

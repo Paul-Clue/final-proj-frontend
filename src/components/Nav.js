@@ -3,32 +3,36 @@ import { Link } from 'react-router-dom';
 // import { useSelector } from 'react-redux';
 // import Filter from './Filter';
 import '../assets/stylesheets/Nav.css';
+import twit from '../assets/img/twitter3.png';
+import face from '../assets/img/facebook2.png';
+import pint from '../assets/img/pinterest.png';
+import goog from '../assets/img/google.png';
 
 function Nav() {
   return (
     <>
-      <nav className="navbar navbar-light ">
+      <nav className="nav flex-column navbar-light ">
         <div className="container-fluid">
           <span className="navbar-brand mb-0 h1">
             <h1 className="NavHead">
-              <span className="dollar">
-                $$
-              </span>
-              CRYPTO
-              <span className="dollar">
-                $$
-              </span>
+              FrameFace
             </h1>
           </span>
-          <div>
+          <div className="home">
             <Link className="Link home" to="/Home">
               Home
             </Link>
           </div>
-          <div>
+          <div className="appoint">
             <Link className="Link login1" to="/Appoint">
-              View your appointment.
+              Appointments
             </Link>
+          </div>
+          <div className="iconDiv">
+            <img src={twit} className="icon2" alt="icon" />
+            <img src={face} className="icon2" alt="icon" />
+            <img src={pint} className="icon2" alt="icon" />
+            <img src={goog} className="icon2" alt="icon" />
           </div>
         </div>
       </nav>

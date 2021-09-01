@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+.header {
+  position: absolute;
+  font-family: Bebas Neue, sans-serif;
+  font-weight: bolder;
+  font-size: 5em;
+  top: 12vh;
+  left: 30%;
+}
+
+.header2 {
+  position: absolute;
+  font-family: Archivo Black, sans-serif;
+  font-weight: bolder;
+  font-size: 1em;
+  top: 22vh;
+  left: 33%;
+  color: gray;
+}
+
+.line {
+  position: absolute;
+  width: 32vw;
+  height: 3px;
+  top: 27vh;
+  left: 37%;
+  border-top: 2px dotted gray;
+}
+
+.accent {
+  background-color: limegreen;
+  width: 3vw;
+  height: 8vh;
+  position: absolute;
+  right: 0vw;
+  top: 50vh;
+}
+
+.accent2 {
+  background-color: limegreen;
+  width: 1vw;
+  height: 8vh;
+  position: absolute;
+  left: 13vw;
+  top: 50vh;
+}
+
+.card-group {
+  width: 100vw;
+}
+
+.card-img-top {
+  width: 10vw;
+}
+
+.card-body {
+  width: 10vw;
+}
+
+.item {
+  width: 15vw;
+}
+
+.home1 {
+  width: 14vw;
+}
+
+.col {
+  margin-top: 44vh;
+  width: 14.2vw;
+}
+
+.card-text {
+  font-size: 1vw;
+}
+
+.card-title {
+  font-size: 2vw;
+}
+
+.icon {
+  margin-top: 3vh;
+  width: 1.5vw;
+  opacity: 50%;
+}
+
+.burb {
+  margin-bottom: -2vh;
+  background: rgba(40, 250, 330, .7);
+}
+
+.dg {
+  margin-bottom: -2vh;
+  background: rgba(200, 150, 310, .7);
+}
+
+.arm {
+  margin-bottom: -3vh;
+}
+
+.ver {
+  margin-bottom: -4vh;
+}
+
+.guc {
+  margin-bottom: -2vh;
+  background: rgba(100, 130, 310, .9);
+}
+
+.tom {
+  margin-bottom: -2vh;
+}
+
+@media only screen and (min-width: 800px) {
+  .header {
+    left: 37%;
+  }
+
+  .header2 {
+    left: 40%;
+  }
+
+  .line {
+    left: 40%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .line {
+    left: 37%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .header2 {
+    left: 39%;
+  }
+
+  .line {
+    left: 39%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .line {
+    left: 36%;
+  }
+}
+
+@media only screen and (min-width: 1300px) {
+  .line {
+    width: 20vw;
+    left: 39%;
+  }
+}

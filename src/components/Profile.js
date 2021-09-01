@@ -8,6 +8,7 @@ import { postData, getData2 } from '../util/apiFetch';
 import { setDate } from '../actions';
 import Nav from './Nav';
 import '../assets/stylesheets/Profile.css';
+import colors from '../assets/img/colors.png';
 
 function Profile(props) {
   const { currentuser } = props;
@@ -21,7 +22,7 @@ function Profile(props) {
   const [date, setDates] = useState(date2.date);
 
   const frm = useSelector((state) => state.prof);
-  const [frm2] = useState(frm);
+  // const [frm2] = useState(frm);
   // console.log(frm2)//eslint-disable-line
   // console.log(frm)//eslint-disable-line
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ function Profile(props) {
     // console.log(dat.current.value);//eslint-disable-line
   };
 
-  const url = 'http://localhost:3001/appoints';
+  const url = 'https://secure-mountain-84366.herokuapp.com/appoints';
   // console.log(`This is user id: ${currentuser.user_id}`)//eslint-disable-line
 
   useEffect(() => {
@@ -78,7 +79,7 @@ function Profile(props) {
       city: cit.current.value,
     };
 
-    const url = 'http://localhost:3001/appoint';
+    const url = 'https://secure-mountain-84366.herokuapp.com/appoint';
     postData(url, user)
       .then((response) => response.json())
       .then((data) => {
@@ -127,50 +128,53 @@ function Profile(props) {
   return (
     <>
       <Nav />
-      <h1>{currentuser.name}</h1>
-      {/* <h1>{currentuser.password}</h1> */}
-      <h1>
-        This is the Date:
-        {date}
-      </h1>
-      <h1>Make an appointment with us!</h1>
+      <div className="accent1">{null}</div>
+      <div className="words">
+        <img src={picture} className="logo1" alt={date} width="250px" />
+        <br />
+        <br />
+        <h1 className="makeAppoint">Make an appointment with us!</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="dateInput">
-          Appointment Date:
-          {/* <input type="date" name="date" ref={nam}
-          value={name} id="nameInput" onChange={handleOnChange} /> */}
-          <input
-            type="date"
-            id="dateInput"
-            name="date"
-            ref={dat}
-            // value="2018-07-22"
-            min="2021-01-01"
-            max="2050-12-31"
-            onChange={handleOnChange}
-          />
-        </label>
-        <label htmlFor="city">
-          City:
-          <select name="city" id="city" className="cities" ref={cit} onChange={handleOnChange}>
-            {city.map((cit) => <option value={cit} key={cit}>{cit}</option>)}
-          </select>
-        </label>
-        <label htmlFor="make">
-          Designer:
-          <input type="text" id="make" name="make" value={frm.make} readOnly={bool} />
-        </label>
-        {date2.date ? <button type="submit" disabled>Appointment Made</button> : <button type="submit">Make Appointment</button> }
-      </form>
-      <img src={picture} alt="frm" width="250px" />
-      <p>This is the date</p>
-      {/* <h1>{date}</h1>
-      <h1>{frm2.make}</h1> */}
-      <h1>{date2.date}</h1>
-      <h1>{date2.frame_id}</h1>
-      <h1>{frm2.make}</h1>
-      <img src={frm.pic} alt="frm" />
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="dateInput">
+            Appointment Date:
+            {/* <input type="date" name="date" ref={nam}
+            value={name} id="nameInput" onChange={handleOnChange} /> */}
+            <input
+              type="date"
+              id="dateInput"
+              name="date"
+              className="form-control"
+              ref={dat}
+              // value="2018-07-22"
+              min="2021-01-01"
+              max="2050-12-31"
+              onChange={handleOnChange}
+            />
+          </label>
+          <br />
+          <br />
+          <label htmlFor="city">
+            City:
+            <select name="city" id="city" className="form-control cities" ref={cit} onChange={handleOnChange}>
+              {city.map((cit) => <option value={cit} key={cit}>{cit}</option>)}
+            </select>
+          </label>
+          <br />
+          <br />
+          <label htmlFor="make">
+            Designer:
+            <input type="text" id="make" name="make" className="form-control design" value={frm.make} readOnly={bool} />
+          </label>
+          <br />
+          <br />
+          {date2.date ? <button type="submit" className="submit" disabled>Appointment Made</button> : <button className="submit" type="submit">Make Appointment</button> }
+        </form>
+        <div className="imgDiv">
+          <img className="colors" src={colors} alt="colors" />
+        </div>
+      </div>
+      <img className="frame" src={frm.pic} alt="frm" />
     </>
   );
 }
