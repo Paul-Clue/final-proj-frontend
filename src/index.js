@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
 import rootReducer from './reducers';
 import './assets/stylesheets/index.css';
 import App from './components/App';
@@ -30,7 +29,6 @@ const store = createStore(
   {
     user, appointments, frame, prof, error,
   },
-  devToolsEnhancer(),
 );
 
 ReactDOM.render(

@@ -148,6 +148,6 @@ function Profile(props) {
 }
 
 Profile.propTypes = { currentuser: PropTypes.instanceOf(Object).isRequired };
-Profile.propTypes = { routerProps: PropTypes.instanceOf(Object).isRequired };
+Profile.propTypes = { routerProps: PropTypes.instanceOf(Object)};
 
 export default Profile;
