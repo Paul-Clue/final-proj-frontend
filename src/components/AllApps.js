@@ -90,41 +90,43 @@ function AllApps() {
   return (
     <>
       {/* <Nav /> */}
-      <h1 className="Apps">Your Appointment Dates</h1>
-      <Link className="HOME" to="/Home">
-        HOME
-      </Link>
       <div style={{ backgroundImage: `url( ${tom})` }} className="appointments">
-        <ul className="ul">
-          {date2.frame
-            ? Object.entries(date2).forEach(([key, value]) => (
-            show3.push(key),//eslint-disable-line
-            show.push(value),//eslint-disable-line
-              show2.push([date2.date, '\xa0\xa0', 'In: ', date2.city, '\xa0\xa0', 'To try on:', '\xa0\xa0', date2.frame.make, '\xa0\xa0', 'frames'])
-            ))
-            : Object.entries(date2).forEach(([key, value]) => (
+        <div className="overlayDiv">
+          <h1 className="Apps">Your Appointment Dates</h1>
+          <hr className=" AppsLine" />
+          <Link className="HOME" to="/Home">
+            <button type="button" className="HOME">HOME</button>
+          </Link>
+          <ul className="ul">
+            {date2.frame
+              ? Object.entries(date2).forEach(([key, value]) => (
               show3.push(key),//eslint-disable-line
               show.push(value),//eslint-disable-line
-              show2.push([value.date, '\xa0\xa0', 'In: ', value.city, '\xa0\xa0', 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
-            ))}
+                show2.push([date2.date, '\xa0\xa0', 'In: ', date2.city, '\xa0\xa0', 'To try on:', '\xa0\xa0', date2.frame.make, '\xa0\xa0', 'frames'])
+              ))
+              : Object.entries(date2).forEach(([key, value]) => (
+                show3.push(key),//eslint-disable-line
+                show.push(value),//eslint-disable-line
+                show2.push([value.date, '\xa0\xa0', 'In: ', value.city, '\xa0\xa0', 'To try on:', '\xa0\xa0', value.frame.make, '\xa0\xa0', 'frames'])
+              ))}
 
-          {date2.frame
-            ? show2.map((app) => (
-              ind ++,//eslint-disable-line
-                <li className="appList" key={ind}>
-                  {app}
-                </li>
-            ))
-            : show2.map((app) => (
-              ind ++,//eslint-disable-line
-                <li className="appList" key={ind}>
-                  {app}
-                </li>
-            ))}
-        </ul>
-        {/* <img className="backImage" src={tom} alt="images" /> */}
+            {date2.frame
+              ? show2.map((app) => (
+                ind ++,//eslint-disable-line
+                  <li className="appList" key={ind}>
+                    {app}
+                  </li>
+              ))
+              : show2.map((app) => (
+                ind ++,//eslint-disable-line
+                  <li className="appList" key={ind}>
+                    {app}
+                  </li>
+              ))}
+          </ul>
+          {/* <img className="backImage" src={tom} alt="images" /> */}
+        </div>
       </div>
-      <div className="overlayDiv">{null}</div>
     </>
   );
 }

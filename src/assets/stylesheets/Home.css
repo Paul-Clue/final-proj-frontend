@@ -5,7 +5,7 @@
   position: absolute;
   font-family: Bebas Neue, sans-serif;
   font-weight: bolder;
-  font-size: 5em;
+  font-size: 11vw;
   top: 12vh;
   left: 30%;
 }
@@ -14,9 +14,9 @@
   position: absolute;
   font-family: Archivo Black, sans-serif;
   font-weight: bolder;
-  font-size: 1em;
+  font-size: 3vw;
   top: 22vh;
-  left: 33%;
+  left: 25vw;
   color: gray;
 }
 
@@ -113,45 +113,46 @@
   margin-bottom: -2vh;
 }
 
-@media only screen and (min-width: 800px) {
-  .header {
-    left: 37%;
-  }
+@media only screen and (min-width: 1100px) {
 
   .header2 {
-    left: 40%;
+    top: 24vh;
   }
 
   .line {
-    left: 40%;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .line {
-    left: 37%;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  .header2 {
-    left: 39%;
-  }
-
-  .line {
-    left: 39%;
+    top: 29vh;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+
+  .header2 {
+    top: 26vh;
+  }
+
   .line {
-    left: 36%;
+    top: 31vh;
   }
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1500px) {
+
+  .header2 {
+    top: 35vh;
+  }
+
   .line {
-    width: 20vw;
-    left: 39%;
+    top: 40vh;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+
+  .header2 {
+    top: 34vh;
+  }
+
+  .line {
+    top: 40vh;
   }
 }

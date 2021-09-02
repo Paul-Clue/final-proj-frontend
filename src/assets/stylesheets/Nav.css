@@ -37,6 +37,7 @@
 
 .appoint {
   margin-top: 5vh;
+  margin-left: -2vw;
   text-align: center;
   width: 12vw;
   height: 3vw;
@@ -54,4 +55,10 @@
 
 .iconDiv {
   margin-top: 38vh;
+}
+
+@media only screen and (min-width: 1000px) {
+  .appoint {
+    margin-left: 0;
+  }
 }
