@@ -1,10 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-// import qs from 'qs';
-// import { createBrowserHistory } from 'history';
 import { postData, getData2 } from '../util/apiFetch';
-// import { postData } from '../util/apiFetch';
 import { setDate } from '../actions';
 import Nav from './Nav';
 import '../assets/stylesheets/Profile.css';
@@ -15,16 +12,10 @@ function Profile(props) {
   const dat = useRef();
   const cit = useRef();
 
-  // console.log(props)//eslint-disable-line
-
   const date2 = useSelector((state) => state.appointments);
-  // console.log(date2)//eslint-disable-line
   const [date, setDates] = useState(date2.date);
 
   const frm = useSelector((state) => state.prof);
-  // const [frm2] = useState(frm);
-  // console.log(frm2)//eslint-disable-line
-  // console.log(frm)//eslint-disable-line
   const dispatch = useDispatch();
   const { routerProps } = props;
 
@@ -32,46 +23,29 @@ function Profile(props) {
     setDates(
       dat.current.value,
     );
-    // console.log(dat.current.value);//eslint-disable-line
   };
 
   const url = 'https://secure-mountain-84366.herokuapp.com/appoints';
-  // console.log(`This is user id: ${currentuser.user_id}`)//eslint-disable-line
 
   useEffect(() => {
     getData2(url, { user_id: currentuser.id, frame_id: frm.id })
       .then((response) => {
         if (response.ok) {
-          // console.log(response)//eslint-disable-line
-          // console.log("That")//eslint-disable-line
           return response.json();
         }
-        console.log(response)//eslint-disable-line
-        console.log("That2")//eslint-disable-line
         return '';
       })
       .then((data) => {
-        // console.log(data)//eslint-disable-line
-        // console.log(data)//eslint-disable-line
-        //   console.log("That")//eslint-disable-line
         dispatch(setDate(data));
 
-        // routerProps.history.push('/profile');
         return data;
-      })
-      .then((data) => console.log(data));
+      });
   }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(cit.current.value)//eslint-disable-line
-    console.log("--------------------------------------------------")//eslint-disable-line
     const user = {
-      // name: currentuser.name,
-      // password: currentuser.password,
-      // name: this.state.name,//eslint-disable-line
-      // password: this.state.password,//eslint-disable-line
       date: dat.current.value,
       user_id: currentuser.id,
       frame_id: frm.id,
@@ -83,14 +57,11 @@ function Profile(props) {
     postData(url, user)
       .then((response) => response.json())
       .then((data) => {
-      console.log(data)//eslint-disable-line
-      console.log("look up")//eslint-disable-line
         dispatch(setDate(data));
 
         routerProps.history.push('/profile');
         return data;
-      })
-      .then((data) => console.log(data));
+      });
   };
 
   function getLogo() {
@@ -138,15 +109,12 @@ function Profile(props) {
         <form onSubmit={handleSubmit}>
           <label htmlFor="dateInput">
             Appointment Date:
-            {/* <input type="date" name="date" ref={nam}
-            value={name} id="nameInput" onChange={handleOnChange} /> */}
             <input
               type="date"
               id="dateInput"
               name="date"
               className="form-control"
               ref={dat}
-              // value="2018-07-22"
               min="2021-01-01"
               max="2050-12-31"
               onChange={handleOnChange}
@@ -181,6 +149,5 @@ function Profile(props) {
 
 Profile.propTypes = { currentuser: PropTypes.instanceOf(Object).isRequired };
 Profile.propTypes = { routerProps: PropTypes.instanceOf(Object).isRequired };
-// Profile.propTypes = { frame: PropTypes.string.isRequired };
 
 export default Profile;

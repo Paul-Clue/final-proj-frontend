@@ -1,4 +1,3 @@
-// import React, { useState, useEffect } from 'react';
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -30,22 +29,14 @@ function Home(props) {
     getData(url)
       .then((response) => response.json())
       .then((data) => {
-        // setCurrentUser(data);
-        console.log(data)//eslint-disable-line
         dispatch(addFrame(data));
 
         routerProps.history.push('/Home');
         return data;
-      })
-      .then((data) => console.log(data));//eslint-disable-line
+      });
   }, []);
 
-  // const { currentuser } = props;
   const frame2 = useSelector((state) => state.frame);
-  console.log(frame2)//eslint-disable-line
-  // const twit = 'https://cdn2.iconfinder.com/data/icons/social-icons-circular-black/512/twitter-128.png';
-  // const face = 'https://cdn2.iconfinder.com/data/icons/social-icons-circular-black/512/fb-128.png';
-  // const inst = 'https://cdn2.iconfinder.com/data/icons/social-icons-circular-black/512/instagram-128.png';
 
   return (
     <>

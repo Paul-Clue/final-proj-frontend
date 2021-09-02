@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import rootReducer from './reducers';
-import './index.css';
+import './assets/stylesheets/index.css';
 import App from './components/App';
 
 const user = {

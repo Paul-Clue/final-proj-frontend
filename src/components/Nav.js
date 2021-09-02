@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
-// import Filter from './Filter';
 import '../assets/stylesheets/Nav.css';
 import twit from '../assets/img/twitter3.png';
 import face from '../assets/img/facebook2.png';
