@@ -121,10 +121,6 @@ function Login(props) {
             </label>
             <input type="submit" className="submitB" value="Create Account" />
           </form>
-          <h1>{name}</h1>
-          <h1>{password}</h1>
-          <h1>{name2}</h1>
-          <h1>{password2}</h1>
         </div>
       </div>
     </>

@@ -1,7 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+// import {
+//   BrowserRouter,
+//   Route,
+//   Switch,
+// } from 'react-router-dom';
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Switch,
 } from 'react-router-dom';
@@ -15,7 +20,7 @@ function App() {
   const CurrentUser = useSelector((state) => state.user);
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         {
         CurrentUser.name
           ? (
@@ -33,7 +38,7 @@ function App() {
           )
           : <Switch><Route path="/" render={(props) => <Login routerProps={props} />} /></Switch>
       }
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
