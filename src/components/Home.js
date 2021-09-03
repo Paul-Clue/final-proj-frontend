@@ -63,14 +63,14 @@ function Home(props) {
                         : frm.make === 'Burberry'
                           ? <img src={burberry} className="card-img-top burb" width="300px" alt="frames" />
                           : ''}
-              <div className="card-body">
-                <h5 className="card-title">{frm.make}</h5>
-                <p className="card-text"><small className="text-muted">Make an appointment for these frames.</small></p>
-                <img src={twit} className="icon" width="100px" alt="icon" />
-                <img src={face} className="icon" width="100px" alt="icon" />
-                <img src={inst} className="icon" width="100px" alt="icon" />
-              </div>
             </Link>
+            <div className="card-body">
+              <h5 className="card-title">{frm.make}</h5>
+              <p className="card-text"><small className="text-muted">Make an appointment for these frames.</small></p>
+              <img src={twit} className="icon" width="100px" alt="icon" />
+              <img src={face} className="icon" width="100px" alt="icon" />
+              <img src={inst} className="icon" width="100px" alt="icon" />
+            </div>
           </div>
         ))}
       </div>
