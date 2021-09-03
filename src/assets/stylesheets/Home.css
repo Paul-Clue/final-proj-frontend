@@ -34,7 +34,7 @@
   width: 3vw;
   height: 8vh;
   position: absolute;
-  right: 0vw;
+  right: 0;
   top: 50vh;
 }
 
@@ -88,12 +88,12 @@
 
 .burb {
   margin-bottom: -2vh;
-  background: rgba(40, 250, 330, .7);
+  background: rgba(40, 250, 330, 0.7);
 }
 
 .dg {
   margin-bottom: -2vh;
-  background: rgba(200, 150, 310, .7);
+  background: rgba(200, 150, 310, 0.7);
 }
 
 .arm {
@@ -106,7 +106,7 @@
 
 .guc {
   margin-bottom: -2vh;
-  background: rgba(100, 130, 310, .9);
+  background: rgba(100, 130, 310, 0.9);
 }
 
 .tom {
@@ -114,7 +114,6 @@
 }
 
 @media only screen and (min-width: 1100px) {
-
   .header2 {
     top: 24vh;
   }
@@ -125,7 +124,6 @@
 }
 
 @media only screen and (min-width: 1200px) {
-
   .header2 {
     top: 26vh;
   }
@@ -136,7 +134,6 @@
 }
 
 @media only screen and (min-width: 1500px) {
-
   .header2 {
     top: 35vh;
   }
@@ -147,7 +144,6 @@
 }
 
 @media only screen and (min-width: 1800px) {
-
   .header2 {
     top: 34vh;
   }

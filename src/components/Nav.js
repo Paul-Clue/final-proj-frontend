@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import '../assets/stylesheets/Nav.css';
 import twit from '../assets/img/twitter3.png';
 import face from '../assets/img/facebook2.png';
@@ -17,18 +17,14 @@ function Nav() {
             </h1>
           </span>
           <div className="home">
-            <BrowserRouter>
-              <Link className="Link home" to="/Home">
-                Home
-              </Link>
-            </BrowserRouter>
+            <Link className="Link home" to="/Home">
+              Home
+            </Link>
           </div>
           <div className="appoint">
-            <BrowserRouter>
-              <Link className="Link login1" to="/Appoint">
-                Appointments
-              </Link>
-            </BrowserRouter>
+            <Link className="Link login1" to="/Appoint">
+              Appointments
+            </Link>
           </div>
           <div className="iconDiv">
             <img src={twit} className="icon2" alt="icon" />

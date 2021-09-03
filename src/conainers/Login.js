@@ -16,8 +16,6 @@ function Login(props) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
 
-  const [loading, setLoading] = useState(true);
-
   const [name2, setName2] = useState('');
   const [password2, setPassword2] = useState('');
 
@@ -66,7 +64,6 @@ function Login(props) {
         } else {
           dispatch(err(null));
           routerProps.history.push('/Home');
-          setLoading(false);
           return data;
         }
       });
@@ -91,16 +88,9 @@ function Login(props) {
           routerProps.history.push('/');
         }
         routerProps.history.push('/Home');
-        setLoading(false);
         return data;
       });
   };
-
-  if(loading) {
-    return (
-      <h1>Loading</h1>
-    )
-  }
 
   return (
     <>
@@ -142,5 +132,6 @@ function Login(props) {
 }
 
 Login.propTypes = { routerProps: PropTypes.instanceOf(Object) };
+Login.defaultProps = { routerProps: null };
 
 export default Login;

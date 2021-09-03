@@ -7,9 +7,8 @@ import configureStore from 'redux-mock-store';
 import ErrReducer from '../reducers/error';
 import FrameReducer from '../reducers/frame';
 import ProfileReducer from '../reducers/profile';
-import UserReducer from '../reducers/user.js'
-import DateReducer from '../reducers/date.js';
-import rootReducer from '../reducers/index';
+import UserReducer from '../reducers/user';
+import DateReducer from '../reducers/date';
 import App from '../components/App';
 import AllApps from '../components/AllApps';
 import Home from '../components/Home';
@@ -168,9 +167,11 @@ describe('Nav Component', () => {
   });
   test('It should render', () => {
     const nav = renderer.create(
-      <Provider store={store}>
-        <Nav />
-      </Provider>,
+      <BrowserRouter>
+        <Provider store={store}>
+          <Nav />
+        </Provider>
+      </BrowserRouter>,
     ).toJSON();
     expect(nav).toMatchSnapshot();
   });
@@ -194,7 +195,7 @@ describe('Nav Component', () => {
 //   it('Should render', () => {
 //     expect(component.toJSON()).toMatchSnapshot();
 //   });
-// }); 
+// });
 
 describe('Profile Component', () => {
   beforeEach(() => {

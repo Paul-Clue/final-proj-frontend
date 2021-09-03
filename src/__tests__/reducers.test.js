@@ -3,7 +3,9 @@ import FrameReducer from '../reducers/frame';
 import ProfileReducer from '../reducers/profile';
 import ErrReducer from '../reducers/error';
 import UserReducer from '../reducers/user';
-import { setUser, setDate, addFrame, changeFrame, err } from '../actions/index';
+import {
+  setUser, setDate, addFrame, changeFrame, err,
+} from '../actions/index';
 
 describe('Date Reducer', () => {
   it('It should return the payload', () => {
@@ -21,12 +23,12 @@ describe('Frame Reducer', () => {
 
 describe('Profile Reducer', () => {
   it('It should return the payload', () => {
-    const prof = {make: 'Gucci'};
-    expect(ProfileReducer(undefined, changeFrame(prof))).toStrictEqual({make: 'Gucci'});
+    const prof = { make: 'Gucci' };
+    expect(ProfileReducer(undefined, changeFrame(prof))).toStrictEqual({ make: 'Gucci' });
   });
 
   it('It should not return an empty payload', () => {
-    const prof = {make: null};
+    const prof = { make: null };
     expect(ProfileReducer(undefined, changeFrame(prof))).not.toBeNull();
   });
 });
@@ -40,7 +42,7 @@ describe('Error Reducer', () => {
 
 describe('User Reducer', () => {
   it('It should return the payload', () => {
-    const user = {name: 'Joe'};
-    expect(UserReducer(undefined, setUser(user))).toStrictEqual({name: 'Joe'});
+    const user = { name: 'Joe' };
+    expect(UserReducer(undefined, setUser(user))).toStrictEqual({ name: 'Joe' });
   });
 });
