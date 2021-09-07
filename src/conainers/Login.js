@@ -5,6 +5,7 @@ import { postData } from '../util/apiFetch';
 import { setUser, err } from '../actions';
 import tom from '../assets/img/tomford2.png';
 import '../assets/stylesheets/Login.css';
+import { login, login2 } from '../components/GetUrls';
 
 function Login(props) {
   const nam = useRef();
@@ -52,9 +53,7 @@ function Login(props) {
       password,
     };
 
-    const url = 'https://secure-mountain-84366.herokuapp.com/login';
-
-    postData(url, user)
+    postData(login, user)
       .then((response) => response.json())
       .then((data) => {//eslint-disable-line
         dispatch(setUser(data));
@@ -77,9 +76,7 @@ function Login(props) {
       password: password2,
     };
 
-    const url = 'https://secure-mountain-84366.herokuapp.com/login2';
-
-    postData(url, user)
+    postData(login2, user)
       .then((response) => response.json())
       .then((data) => {
         dispatch(setUser(data));

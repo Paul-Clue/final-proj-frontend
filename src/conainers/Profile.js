@@ -6,6 +6,7 @@ import { setDate } from '../actions';
 import Nav from '../components/Nav';
 import '../assets/stylesheets/Profile.css';
 import colors from '../assets/img/colors.png';
+import { getLogo, appoints, appoint } from '../components/GetUrls';
 
 function Profile(props) {
   const { currentuser } = props;
@@ -25,10 +26,8 @@ function Profile(props) {
     );
   };
 
-  const url = 'https://secure-mountain-84366.herokuapp.com/appoints';
-
   useEffect(() => {
-    getData2(url, { user_id: currentuser.id, frame_id: frm.id })
+    getData2(appoints, { user_id: currentuser.id, frame_id: frm.id })
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -53,8 +52,7 @@ function Profile(props) {
       city: cit.current.value,
     };
 
-    const url = 'https://secure-mountain-84366.herokuapp.com/appoint';
-    postData(url, user)
+    postData(appoint, user)
       .then((response) => response.json())
       .then((data) => {
         dispatch(setDate(data));
@@ -64,34 +62,7 @@ function Profile(props) {
       });
   };
 
-  function getLogo() {
-    let flick = '';
-    switch (frm.make) {
-      case 'Gucci':
-        flick = 'https://blog.logomyway.com/wp-content/uploads/2016/12/gucci-logo-gold.jpg';
-        return flick;
-      case 'Versace':
-        flick = 'https://logos-world.net/wp-content/uploads/2020/04/Versace-Logo.png';
-        return flick;
-      case 'Armani':
-        flick = 'https://1000logos.net/wp-content/uploads/2016/10/Giorgio-Armani-logo.jpg';
-        return flick;
-      case 'D&G':
-        flick = 'https://global-uploads.webflow.com/5e157548d6f7910beea4e2d6/60a3d1be18fcab31b78277f6_dolce-gabbana-luxury-logo.png';
-        return flick;
-      case 'Tom Ford':
-        flick = 'https://logovtor.com/wp-content/uploads/2020/08/tom-ford-eyewear-logo-vector.png';
-        return flick;
-      case 'Burberry':
-        flick = 'https://1000logos.net/wp-content/uploads/2019/06/Burberry-Logo-1999.jpg';
-        return flick;
-      default:
-        flick = 'No Logo';
-        return flick;
-    }
-  }
-
-  const picture = getLogo();
+  const picture = getLogo(frm);
 
   const city = ['New York', 'Los Angeles', 'Chicago'];
   const bool = true;

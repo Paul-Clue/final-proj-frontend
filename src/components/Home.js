@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { getData } from '../util/apiFetch';
 import { addFrame, changeFrame } from '../actions';
 import Nav from './Nav';
+import { frm } from './GetUrls';
 import '../assets/stylesheets/Home.css';
 import twit from '../assets/img/twitter2.png';
 import face from '../assets/img/facebook.png';
@@ -24,9 +25,8 @@ function Home(props) {
     dispatch(changeFrame(load));
   }
 
-  const url = 'https://secure-mountain-84366.herokuapp.com/frm';
   useEffect(() => {
-    getData(url)
+    getData(frm)
       .then((response) => response.json())
       .then((data) => {
         dispatch(addFrame(data));

@@ -9,11 +9,11 @@ import FrameReducer from '../reducers/frame';
 import ProfileReducer from '../reducers/profile';
 import UserReducer from '../reducers/user';
 import DateReducer from '../reducers/date';
-import App from '../components/App';
+import App from '../conainers/App';
 import AllApps from '../components/AllApps';
 import Home from '../components/Home';
 import Login from '../conainers/Login';
-import Profile from '../components/Profile';
+import Profile from '../conainers/Profile';
 import Nav from '../components/Nav';
 
 // const coins = [{
