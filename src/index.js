@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
 import './assets/stylesheets/index.css';
-import App from './components/App';
+import App from './conainers/App';
 
 const user = {
   name: '',

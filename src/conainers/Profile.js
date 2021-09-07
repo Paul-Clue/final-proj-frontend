@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { postData, getData2 } from '../util/apiFetch';
 import { setDate } from '../actions';
-import Nav from './Nav';
+import Nav from '../components/Nav';
 import '../assets/stylesheets/Profile.css';
 import colors from '../assets/img/colors.png';
 
@@ -98,51 +98,59 @@ function Profile(props) {
 
   return (
     <>
-      <Nav />
-      <div className="accent1">{null}</div>
-      <div className="words">
-        <img src={picture} className="logo1" alt={date} width="250px" />
-        <br />
-        <br />
-        <h1 className="makeAppoint">Make an appointment with us!</h1>
+      <main>
+        <section>
+          <Nav />
+        </section>
+        <section>
+          <div className="accent1">{null}</div>
+          <div className="words">
+            <img src={picture} className="logo1" alt={date} width="250px" />
+            <br />
+            <br />
+            <h1 className="makeAppoint">Make an appointment with us!</h1>
 
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="dateInput">
-            Appointment Date:
-            <input
-              type="date"
-              id="dateInput"
-              name="date"
-              className="form-control"
-              ref={dat}
-              min="2021-01-01"
-              max="2050-12-31"
-              onChange={handleOnChange}
-            />
-          </label>
-          <br />
-          <br />
-          <label htmlFor="city">
-            City:
-            <select name="city" id="city" className="form-control cities" ref={cit} onChange={handleOnChange}>
-              {city.map((cit) => <option value={cit} key={cit}>{cit}</option>)}
-            </select>
-          </label>
-          <br />
-          <br />
-          <label htmlFor="make">
-            Designer:
-            <input type="text" id="make" name="make" className="form-control design" value={frm.make} readOnly={bool} />
-          </label>
-          <br />
-          <br />
-          {date2.date ? <button type="submit" className="submit" disabled>Appointment Made</button> : <button className="submit" type="submit">Make Appointment</button> }
-        </form>
-        <div className="imgDiv">
-          <img className="colors" src={colors} alt="colors" />
-        </div>
-      </div>
-      <img className="frame" src={frm.pic} alt="frm" />
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="dateInput">
+                Appointment Date:
+                <input
+                  type="date"
+                  id="dateInput"
+                  name="date"
+                  className="form-control"
+                  ref={dat}
+                  min="2021-01-01"
+                  max="2050-12-31"
+                  onChange={handleOnChange}
+                />
+              </label>
+              <br />
+              <br />
+              <label htmlFor="city">
+                City:
+                <select name="city" id="city" className="form-control cities" ref={cit} onChange={handleOnChange}>
+                  {city.map((cit) => <option value={cit} key={cit}>{cit}</option>)}
+                </select>
+              </label>
+              <br />
+              <br />
+              <label htmlFor="make">
+                Designer:
+                <input type="text" id="make" name="make" className="form-control design" value={frm.make} readOnly={bool} />
+              </label>
+              <br />
+              <br />
+              {date2.date ? <button type="submit" className="submit" disabled>Appointment Made</button> : <button className="submit" type="submit">Make Appointment</button> }
+            </form>
+            <div className="imgDiv">
+              <img className="colors" src={colors} alt="colors" />
+            </div>
+          </div>
+        </section>
+        <section>
+          <img className="frame" src={frm.pic} alt="frm" />
+        </section>
+      </main>
     </>
   );
 }

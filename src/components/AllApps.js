@@ -48,7 +48,7 @@ function AllApps() {
 
   return (
     <>
-      <div style={{ backgroundImage: `url( ${tom})` }} className="appointments">
+      <main style={{ backgroundImage: `url( ${tom})` }} className="appointments">
         <div className="overlayDiv">
           <h1 className="Apps">Your Appointment Dates</h1>
           <hr className=" AppsLine" />
@@ -83,7 +83,7 @@ function AllApps() {
               ))}
           </ul>
         </div>
-      </div>
+      </main>
     </>
   );
 }

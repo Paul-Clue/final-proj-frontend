@@ -6,10 +6,10 @@ import {
   Switch,
 } from 'react-router-dom';
 import '../assets/stylesheets/App.css';
-import Login from '../conainers/Login';
+import Login from './Login';
 import Profile from './Profile';
-import Home from './Home';
-import AllApps from './AllApps';
+import Home from '../components/Home';
+import AllApps from '../components/AllApps';
 
 function App() {
   const CurrentUser = useSelector((state) => state.user);

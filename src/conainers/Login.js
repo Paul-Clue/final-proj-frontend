@@ -94,7 +94,7 @@ function Login(props) {
 
   return (
     <>
-      <div className="loginDiv">
+      <main className="loginDiv">
         <div className="loginDiv2" style={{ backgroundImage: `url( ${tom})` }}>
           <h1 className="err">{message}</h1>
           <h1 className="bigLogo">FrameFace</h1>
@@ -122,7 +122,7 @@ function Login(props) {
             <input type="submit" className="submitB" value="Create Account" />
           </form>
         </div>
-      </div>
+      </main>
     </>
   );
 }
