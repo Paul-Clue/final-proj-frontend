@@ -1,9 +1,9 @@
-const UserReducer = (state = { name: '', password: '' }, action) => {
+const UserReducer = (state = {}, action) => {
   let changedState = state;
 
   switch (action.type) {
     case 'NEW_USER':
-      changedState = { name: action.payload.name, password: action.payload.password };
+      changedState = { ...action.payload };
       return changedState;
     default:
       return changedState;

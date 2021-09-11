@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+.NavHead {
+  font-family: Lobster, serif;
+  font-size: 2vw;
+}
+
+.nav {
+  background-color: whitesmoke;
+  width: 14vw;
+  height: 100vh;
+  border-right: 3px solid lightgray;
+}
+
+.home {
+  margin-top: 30vh;
+  text-align: center;
+  width: 7vw;
+  height: 3vw;
+}
+
+.home:hover {
+  background-color: limegreen;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.Link {
+  text-decoration: none;
+  color: black;
+  opacity: 0.78;
+  font-family: Archivo Black, sans-serif;
+  font-weight: bolder;
+  font-size: 1.5vw;
+}
+
+.appoint {
+  margin-top: 5vh;
+  margin-left: -2vw;
+  text-align: center;
+  width: 12vw;
+  height: 3vw;
+}
+
+.appoint:hover {
+  background-color: limegreen;
+  text-align: center;
+  border-radius: 5%;
+}
+
+.icon2 {
+  width: 2vw;
+}
+
+.iconDiv {
+  margin-top: 38vh;
+}
+
+@media only screen and (min-width: 1000px) {
+  .appoint {
+    margin-left: 0;
+  }
+}

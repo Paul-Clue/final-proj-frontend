@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AllApps Component It should render 1`] = `
+<main
+  className="appointments"
+  style={
+    Object {
+      "backgroundImage": "url( tomford.jpg)",
+    }
+  }
+>
+  <div
+    className="overlayDiv"
+  >
+    <h1
+      className="Apps"
+    >
+      Your Appointment Dates
+    </h1>
+    <hr
+      className=" AppsLine"
+    />
+    <a
+      className="HOME"
+      href="/Home"
+      onClick={[Function]}
+    >
+      <button
+        className="HOME"
+        type="button"
+      >
+        HOME
+      </button>
+    </a>
+    <ul
+      className="ul"
+    />
+  </div>
+</main>
+`;
+
+exports[`App Component It should render 1`] = `
+<h1>
+  Something went wrong.
+</h1>
+`;
+
+exports[`Home Component It should render 1`] = `
+<h1>
+  Something went wrong.
+</h1>
+`;
+
+exports[`Login Component It should render 1`] = `
+<h1>
+  Something went wrong.
+</h1>
+`;
+
+exports[`Nav Component It should render 1`] = `
+<nav
+  className="nav flex-column navbar-light "
+>
+  <div
+    className="container-fluid"
+  >
+    <span
+      className="navbar-brand mb-0 h1"
+    >
+      <h1
+        className="NavHead"
+      >
+        FrameFace
+      </h1>
+    </span>
+    <div
+      className="home"
+    >
+      <a
+        className="Link home"
+        href="/Home"
+        onClick={[Function]}
+      >
+        Home
+      </a>
+    </div>
+    <div
+      className="appoint"
+    >
+      <a
+        className="Link login1"
+        href="/Appoint"
+        onClick={[Function]}
+      >
+        Appointments
+      </a>
+    </div>
+    <div
+      className="iconDiv"
+    >
+      <img
+        alt="icon"
+        className="icon2"
+        src="twitter3.png"
+      />
+      <img
+        alt="icon"
+        className="icon2"
+        src="facebook2.png"
+      />
+      <img
+        alt="icon"
+        className="icon2"
+        src="pinterest.png"
+      />
+      <img
+        alt="icon"
+        className="icon2"
+        src="google.png"
+      />
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Profile Component It should render 1`] = `
+<h1>
+  Something went wrong.
+</h1>
+`;

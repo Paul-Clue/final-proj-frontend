@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=M+PLUS+1p:wght@300&display=swap');
+
+.logo1 {
+  margin-right: 2vw;
+  width: 12vw;
+}
+
+.makeAppoint {
+  font-size: 1vw;
+}
+
+.words {
+  position: absolute;
+  right: 1vw;
+  top: 5vh;
+  text-align: center;
+  font-family: M PLUS, sans-serif, serif;
+  font-weight: bolder;
+}
+
+.imgDiv {
+  margin-top: 10vh;
+}
+
+.frame {
+  width: 45vw;
+  position: absolute;
+  top: 30vh;
+  left: 28vw;
+}
+
+.submit {
+  background: limegreen;
+  border: none;
+  border-radius: 45%;
+  height: 3vw;
+  width: 15vw;
+}
+
+.design {
+  text-align: center;
+}
+
+.accent1 {
+  width: 3vw;
+  height: 8vh;
+  background-color: limegreen;
+  position: absolute;
+  left: 14vw;
+  top: 69vh;
+}
+
+.colors {
+  width: 13vw;
+  margin-top: -7vh;
+}

@@ -1,105 +1,142 @@
-// import React, { useState, useRef, useEffect } from 'react';
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import getData from '../util/apiFetch';
-import { setUser } from '../actions';
+import { useDispatch, useSelector } from 'react-redux';
+import * as ReactBootstrap from 'react-bootstrap';
+import { postData } from '../util/apiFetch';
+import { setUser, err, setLoading } from '../actions';
+import tom from '../assets/img/tomford2.png';
+import '../assets/stylesheets/Login.css';
+import { login, login2 } from '../components/GetUrls';
 
 function Login(props) {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     name: '',
-  //     password: '',
-  //   };
-  //   this.handleOnChange = this.handleOnChange.bind(this);
-  // }
+  // const [LyricsItem, setLyricsItem] = useState(null);
+  // const [Loading, setLoading] = useState(false);
 
   const nam = useRef();
   const pass = useRef();
+
+  const nam2 = useRef();
+  const pass2 = useRef();
+
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+
+  const [name2, setName2] = useState('');
+  const [password2, setPassword2] = useState('');
+
+  const message = useSelector((state) => state.error);
+  const loading = useSelector((state) => state.loading);
+
   const dispatch = useDispatch();
 
   const handleOnChange = () => {
     setName(
-      // [event.target.name]: event.target.value,
       nam.current.value,
     );
-    console.log(nam.current.value);//eslint-disable-line
-
     setPassword(
-      // [event.target.password]: event.target.value,
       pass.current.value,
     );
   };
 
-  // const { setCurrentUser } = props;
+  const handleOnChange2 = () => {
+    setName2(
+      nam2.current.value,
+    );
+
+    setPassword2(
+      pass2.current.value,
+    );
+  };
+
   const { routerProps } = props;
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const user = {
       name,
       password,
-      // name: this.state.name,//eslint-disable-line
-      // password: this.state.password,//eslint-disable-line
     };
 
-    const url = 'http://localhost:3001/login';
-
-    // useEffect(() => {
-    getData(url, user)
+    postData(login, user)
       .then((response) => response.json())
-      .then((data) => {
-        // setCurrentUser(data);
+      .then((data) => {//eslint-disable-line
         dispatch(setUser(data));
-        routerProps.history.push('/profile');
-        return data;
-      })
-      .then((data) => console.log(data));
-    // }, []);
-
-    // fetch('http://localhost:3001/login', {
-    //   method: 'Post',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'Accept': 'application/json',//eslint-disable-line
-    //   },
-    //   body: JSON.stringify(user),
-    // })
-    // .then((response) => response.json())
-    // .then((data) => {
-    //   setCurrentUser(data);
-    //   routerProps.history.push('/profile');
-    //   return data;
-    // })
-    // .then((data) => console.log(data));
+        if (data.message === 'Couldn\'t find User') {
+          dispatch(setLoading(false));
+          dispatch(err('Please try to login again or create an account.'));
+          routerProps.history.push('/');
+        } else {
+          dispatch(err(null));
+          routerProps.history.push('/Home');
+          return data;
+        }
+      });
+    dispatch(setLoading(true));
   };
 
-  // const { password } = this.state;
-  // const { name } = this.state;
+  const handleSubmit2 = (event) => {
+    event.preventDefault();
+
+    const user = {
+      name: name2,
+      password: password2,
+    };
+
+    postData(login2, user)
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(setUser(data));
+        if (data.message === 'no-no') {
+          dispatch(setLoading(false));
+          dispatch(err('This account already exists. Please try creating another account or login.'));
+          routerProps.history.push('/');
+        }
+        routerProps.history.push('/Home');
+        return data;
+      });
+
+    dispatch(setLoading(true));
+  };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="nameInput">
-          Name:
-          <input type="text" name="name" ref={nam} value={name} id="nameInput" onChange={handleOnChange} />
-        </label>
-        <label htmlFor="passwordInput">
-          Password:
-          <input type="password" name="password" ref={pass} value={password} id="passwordInput" onChange={handleOnChange} />
-        </label>
-        <input type="submit" value="Login" />
-      </form>
-      <h1>{name}</h1>
-      <h1>{password}</h1>
+      <main className="loginDiv">
+        <div className="loginDiv2" style={{ backgroundImage: `url( ${tom})` }}>
+          {loading ? <ReactBootstrap.Spinner animation="border" variant="info" className="spinner" /> : null}
+          {/* <ReactBootstrap.Spinner animation="border" variant="info" className="spinner" /> */}
+          <h1 className="err">{message}</h1>
+          <h1 className="bigLogo">FrameFace</h1>
+          <form onSubmit={handleSubmit} id="loginId">
+            <label htmlFor="nameInput">
+              Name:
+              <input type="text" name="name" ref={nam} value={name} id="nameInput" onChange={handleOnChange} />
+            </label>
+            <label htmlFor="passwordInput">
+              Password:
+              <input type="password" name="password" ref={pass} value={password} id="passwordInput" onChange={handleOnChange} />
+            </label>
+            <input type="submit" className="submitB" value="Login" />
+          </form>
+
+          <form onSubmit={handleSubmit2}>
+            <label htmlFor="nameInput2">
+              Name:
+              <input type="text" name="name2" ref={nam2} value={name2} id="nameInput2" onChange={handleOnChange2} />
+            </label>
+            <label htmlFor="passwordInput2">
+              Password:
+              <input type="password" name="password2" ref={pass2} value={password2} id="passwordInput2" onChange={handleOnChange2} />
+            </label>
+            <input type="submit" className="submitB" value="Create Account" />
+          </form>
+        </div>
+      </main>
     </>
   );
 }
 
-// Login.propTypes = { setCurrentUser: PropTypes.instanceOf(Function).isRequired };
-Login.propTypes = { routerProps: PropTypes.instanceOf(Object).isRequired };
+Login.propTypes = { routerProps: PropTypes.instanceOf(Object) };
+Login.defaultProps = { routerProps: null };
 
 export default Login;

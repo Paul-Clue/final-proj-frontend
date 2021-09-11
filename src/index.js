@@ -1,36 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import { devToolsEnhancer } from 'redux-devtools-extension';
 import rootReducer from './reducers';
-import './index.css';
-import App from './components/App';
+import './assets/stylesheets/index.css';
+import App from './conainers/App';
 
 const user = {
   name: '',
   password: '',
+  user_id: '',
 };
 
-// const frames = {
-//   make: '',
-// };
+const frame = [];
 
-// const appointments = {
-//   date: '',
-// };
+const appointments = [];
 
-// const store = createStore(
-//   rootReducer,
-//   { user: user, filter: filters, detail: details },
-//   devToolsEnhancer(),
-// );
+const loading = false;
+
+const prof = {
+  make: '',
+  pic: '',
+};
+
+const error = '';
 
 const store = createStore(
   rootReducer,
-  { user },
-  devToolsEnhancer(),
+  {
+    user, appointments, frame, prof, error, loading,
+  },
 );
 
 ReactDOM.render(

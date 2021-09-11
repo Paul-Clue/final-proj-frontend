@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+.appointments {
+  position: absolute;
+  height: 90vh;
+  left: 5vw;
+  top: 5vh;
+  width: 90vw;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  text-align: center;
+}
+
+.ul {
+  list-style-type: none;
+  position: absolute;
+  top: 25vh;
+  left: 21vw;
+}
+
+.backImage {
+  position: absolute;
+  left: -15vw;
+  z-index: 0;
+  width: 70vw;
+}
+
+.overlayDiv {
+  background-color: rgba(86, 130, 3, 0.8);
+  position: absolute;
+  height: 90vh;
+  left: 0;
+  top: 0;
+  width: 90vw;
+}
+
+.appList {
+  font-family: Archivo Black, sans-serif;
+  font-size: 1.5vw;
+  color: white;
+}
+
+.HOME {
+  position: absolute;
+  font-family: Poppins, sans-serif;
+  top: 30vh;
+  left: 5vw;
+  color: white;
+  font-size: 2vw;
+  text-decoration: none;
+  border: 1px solid white;
+  background-color: rgba(86, 130, 3, 0.7);
+}
+
+.Apps {
+  position: absolute;
+  font-family: Archivo Black, sans-serif;
+  font-size: 3vw;
+  top: 16vh;
+  left: 22vw;
+  font-weight: bolder;
+  color: white;
+}
+
+.AppsLine {
+  position: absolute;
+  top: 20vh;
+  left: 11vw;
+  width: 60vw;
+  border-top: 2px solid white;
+}
+
+@media only screen and (min-width: 1500px) {
+  .AppsLine {
+    top: 22vh;
+  }
+}

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+.spinner {
+  position: absolute;
+  top: 13vw;
+  left: 38vw;
+  width: 12vw;
+  height: 12vw;
+}
+
+.loginDiv {
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid black;
+}
+
+.loginDiv2 {
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+  width: 90vw;
+  height: 90vh;
+  background-color: orange;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.bigLogo {
+  font-family: Lobster, serif;
+  color: white;
+  font-size: 7vw;
+  margin-top: 25vh;
+  margin-left: 30vw;
+}
+
+form {
+  color: white;
+  font-family: Archivo white, sans-serif;
+  font-weight: bolder;
+  font-size: 1.5vw;
+  margin-left: 19vw;
+}
+
+.submitB {
+  background-color: rgba(86, 130, 3, 0.7);
+  color: white;
+  border-radius: 40%;
+  border: none;
+  height: 6vh;
+}
+
+.err {
+  color: red;
+  font-size: 3vw;
+}
