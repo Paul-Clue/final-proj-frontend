@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AllApps Component It should render 1`] = `
-<div
+<main
   className="appointments"
   style={
     Object {
@@ -36,7 +36,7 @@ exports[`AllApps Component It should render 1`] = `
       className="ul"
     />
   </div>
-</div>
+</main>
 `;
 
 exports[`App Component It should render 1`] = `

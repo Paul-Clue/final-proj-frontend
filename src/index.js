@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
@@ -17,6 +18,8 @@ const frame = [];
 
 const appointments = [];
 
+const loading = false;
+
 const prof = {
   make: '',
   pic: '',
@@ -27,7 +30,7 @@ const error = '';
 const store = createStore(
   rootReducer,
   {
-    user, appointments, frame, prof, error,
+    user, appointments, frame, prof, error, loading,
   },
 );
 

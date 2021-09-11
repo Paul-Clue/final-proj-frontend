@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+.spinner {
+  position: absolute;
+  top: 13vw;
+  left: 38vw;
+  width: 12vw;
+  height: 12vw;
+}
+
 .loginDiv {
   width: 100vw;
   height: 100vh;

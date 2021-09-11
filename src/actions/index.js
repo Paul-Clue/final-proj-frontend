@@ -22,3 +22,8 @@ export const err = (frm) => ({
   type: 'ERROR',
   payload: frm,
 });
+
+export const setLoading = (load) => ({
+  type: 'LOADING',
+  payload: load,
+});

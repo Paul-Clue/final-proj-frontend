@@ -1,13 +1,17 @@
 import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import * as ReactBootstrap from 'react-bootstrap';
 import { postData } from '../util/apiFetch';
-import { setUser, err } from '../actions';
+import { setUser, err, setLoading } from '../actions';
 import tom from '../assets/img/tomford2.png';
 import '../assets/stylesheets/Login.css';
 import { login, login2 } from '../components/GetUrls';
 
 function Login(props) {
+  // const [LyricsItem, setLyricsItem] = useState(null);
+  // const [Loading, setLoading] = useState(false);
+
   const nam = useRef();
   const pass = useRef();
 
@@ -21,6 +25,7 @@ function Login(props) {
   const [password2, setPassword2] = useState('');
 
   const message = useSelector((state) => state.error);
+  const loading = useSelector((state) => state.loading);
 
   const dispatch = useDispatch();
 
@@ -58,6 +63,7 @@ function Login(props) {
       .then((data) => {//eslint-disable-line
         dispatch(setUser(data));
         if (data.message === 'Couldn\'t find User') {
+          dispatch(setLoading(false));
           dispatch(err('Please try to login again or create an account.'));
           routerProps.history.push('/');
         } else {
@@ -66,6 +72,7 @@ function Login(props) {
           return data;
         }
       });
+    dispatch(setLoading(true));
   };
 
   const handleSubmit2 = (event) => {
@@ -81,21 +88,26 @@ function Login(props) {
       .then((data) => {
         dispatch(setUser(data));
         if (data.message === 'no-no') {
+          dispatch(setLoading(false));
           dispatch(err('This account already exists. Please try creating another account or login.'));
           routerProps.history.push('/');
         }
         routerProps.history.push('/Home');
         return data;
       });
+
+    dispatch(setLoading(true));
   };
 
   return (
     <>
       <main className="loginDiv">
         <div className="loginDiv2" style={{ backgroundImage: `url( ${tom})` }}>
+          {loading ? <ReactBootstrap.Spinner animation="border" variant="info" className="spinner" /> : null}
+          {/* <ReactBootstrap.Spinner animation="border" variant="info" className="spinner" /> */}
           <h1 className="err">{message}</h1>
           <h1 className="bigLogo">FrameFace</h1>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} id="loginId">
             <label htmlFor="nameInput">
               Name:
               <input type="text" name="name" ref={nam} value={name} id="nameInput" onChange={handleOnChange} />
