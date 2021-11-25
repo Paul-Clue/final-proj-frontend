@@ -6,10 +6,10 @@
 
 ![screenshot](./src/assets/img/screen.png)
 
-1. The user logs in the app with their username and password.
+1. The user logs into the app with their username and password.
 2. The user can create a new account.
-3. After loging in, the user is presented with a list of designer frames.
-4. When a user selects a particular frame, detailed information about that frame model is presented and the possibility to make an appointment to try on the frames in is presented.
+3. After logging in, the user is presented with a list of designer frames.
+4. When a user selects a particular frame, detailed information about that frame model is presented and the possibility to make an appointment to try on the frame is presented.
 5. The user can access a list of all of the appointments created by him/her.
 
 ## Built With
@@ -17,6 +17,7 @@
 - Javascript, HTML, CSS.
 - React & Redux.
 - Webpack, Jest, Babel.
+- Ruby on Rails (Back-end)
 
 ## Live Demo
 
@@ -25,9 +26,9 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple steps.
+To get a local copy up and running, follow these simple steps.
 
-- On the top of the page there is a green button labeled "Code"
+- On the top of the repository's page, there is a green button labeled "Code"
 - Click on the "Code" button.
 - A Menu will appear. Click on the "Download Zip" menu option.
 - Save the zip file on your computer.
