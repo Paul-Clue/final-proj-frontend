@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getData } from '../util/apiFetch';
-import { addFrame, changeFrame } from '../actions';
+import { addFrame, changeFrame, setLoading } from '../actions';
 import Nav from './Nav';
 import { frm } from './GetUrls';
 import '../assets/stylesheets/Home.css';
@@ -20,6 +20,8 @@ import tomford from '../assets/img/tomford.jpg';
 function Home(props) {
   const { routerProps } = props;
   const dispatch = useDispatch();
+  // const loading = useSelector((state) => state.loading);
+  dispatch(setLoading(false));
 
   function sendInfo(load) {
     dispatch(changeFrame(load));
