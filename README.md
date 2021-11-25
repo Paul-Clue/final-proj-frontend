@@ -49,6 +49,7 @@ To get a local copy up and running follow these simple steps.
 - Open your command prompt.
 - Go inside the folder you extracted from the zip file.
 - Type `npm start` (this should open a page in your default browser and the page should load).
+- Copy and paste the credentials provided on the login screen and press "Login".
 
 ## Run tests
 

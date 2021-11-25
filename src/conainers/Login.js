@@ -130,6 +130,9 @@ function Login(props) {
             </label>
             <input type="submit" className="submitB" value="Create Account" />
           </form>
+          <div className="loginInstructions">Copy and paste these credentials then press "Login"</div>{/*eslint-disable-line*/}
+          <div className="logInCred logIn1">Name: &nbsp; &nbsp; &nbsp; &nbsp; one</div>
+          <div className="logInCred">Password: &nbsp; 123</div>
         </div>
       </main>
     </>

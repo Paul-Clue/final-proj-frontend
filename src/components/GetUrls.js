@@ -29,6 +29,7 @@ const appoints = 'https://secure-mountain-84366.herokuapp.com/appoints';
 const appoint = 'https://secure-mountain-84366.herokuapp.com/appoint';
 const login = 'https://secure-mountain-84366.herokuapp.com/login';
 const login2 = 'https://secure-mountain-84366.herokuapp.com/login2';
+// const login2 = 'http://localhost:3001/login2/';
 const frm = 'https://secure-mountain-84366.herokuapp.com/frm';
 
 export {
